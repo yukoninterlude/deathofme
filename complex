@@ -37,7 +37,7 @@ getgenv().Shhhh = {
   ["AimAssist"] = {
       Enabled = true,
       Hold_KeyBind = false,
-      Mode = "Auto", -- // "KeyBind" or "Mouse" or "Auto", ("Auto" will auto lock on target once they are in aimassist fov)
+      Mode = "Keybind", -- // "KeyBind" or "Mouse" or "Auto", ("Auto" will auto lock on target once they are in aimassist fov)
       KeyBind = 'Q',
       MouseBind = Enum.UserInputType.MouseButton2,
       ThirdPerson = true,
@@ -199,7 +199,7 @@ getgenv().Shhhh = {
       Speed = 1,
   },
   ["GunFov"] = { -- Turn Default and AirShot off for Range
-      Enabled = false,
+      Enabled = true,
       Fov = true,        -- to use Fov Size stuff turn off if you don't touch Fov Size
       Prediction = true, -- to use Prediction stuff turn off if you don't touch Prediction
       HitChance = true,  -- to use Hitchance stuff turn off if you don't touch Hitchance
