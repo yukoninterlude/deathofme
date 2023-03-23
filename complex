@@ -138,9 +138,9 @@ getgenv().Shhhh = {
           Delay = 1,
     },
       ["Settings"] = {
-          AutoLowGFX = true,
-          MuteBoomBox = true,
-          AutoReload = true,
+          AutoLowGFX = false,
+          MuteBoomBox = false,
+          AutoReload = false,
       },
   },
   ["TriggerBot"] = {
