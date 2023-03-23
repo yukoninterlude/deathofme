@@ -1,6 +1,6 @@
 getgenv().Shhhh = {
   ["Options"] = {
-      Key = "keyhere", -- // replace with ur key ofc
+      Key = "dJPhrQDOTjbiyWcTbNFEGaUbeUspolcm", -- // replace with ur key ofc
       Version = "Latest", -- // "Latest" for latest version
       Intro = false, -- // starts a small intro
   },
@@ -37,7 +37,7 @@ getgenv().Shhhh = {
   ["AimAssist"] = {
       Enabled = true,
       Hold_KeyBind = false,
-      Mode = "Auto", -- // "KeyBind" or "Mouse" or "Auto", ("Auto" will auto lock on target once they are in aimassist fov)
+      Mode = "Keybind", -- // "KeyBind" or "Mouse" or "Auto", ("Auto" will auto lock on target once they are in aimassist fov)
       KeyBind = 'Q',
       MouseBind = Enum.UserInputType.MouseButton2,
       ThirdPerson = true,
@@ -161,8 +161,8 @@ getgenv().Shhhh = {
       Second_Gun = "[TacticalShotgun]",
   },
   ["Animation"] = { -- once u click the keybinds it makes u use the Animation
-      Lay = true, LayKey = Enum.KeyCode.T,
-      Greet = true, GreetKey = Enum.KeyCode.G,
+      Lay = false, LayKey = Enum.KeyCode.T,
+      Greet = false, GreetKey = Enum.KeyCode.G,
       Speed = false, SpeedKey = Enum.KeyCode.N,
       Sturdy = false, SturdyKey = Enum.KeyCode.H,
       Griddy = false, GriddyKey = Enum.KeyCode.G,
@@ -171,8 +171,8 @@ getgenv().Shhhh = {
     Enabled = true,
     SortFood = true,
     Keybind = "Z",
-    FirstSlot = "[Double-Barrel SG]",
-    SecondSlot = "[Revolver]",
+    FirstSlot = "[Revolver]",
+    SecondSlot = "[Double-Barrel SG]",
     ThirdSlot = "[TacticalShotgun]",
     FourthSlot = "[Shotgun]",
     FifthSlot = "[Katana]",
@@ -189,17 +189,17 @@ getgenv().Shhhh = {
       Hold_Key = false,
       KeyBind = Enum.KeyCode.X,
       AntiMacroFling = true, -- // not here yet
-      BypassMacroAbuse = true,
+      BypassMacroAbuse = false,
       Mode = 'First Person', -- // use "Normal" or "First Person"
   },
   ["Memory"] = {
-      Enable = false,
+      Enable = true,
       Start = 971,
       End = 984,
       Speed = 1,
   },
   ["GunFov"] = { -- Turn Default and AirShot off for Range
-      Enabled = false,
+      Enabled = true,
       Fov = true,        -- to use Fov Size stuff turn off if you don't touch Fov Size
       Prediction = true, -- to use Prediction stuff turn off if you don't touch Prediction
       HitChance = true,  -- to use Hitchance stuff turn off if you don't touch Hitchance
@@ -211,14 +211,14 @@ getgenv().Shhhh = {
       Mid = 30,          -- if target is this far from you like 15 steps it will use Mid_ stuff
       Far = math.huge,   -- if target is this far from you like 15 steps it will use Far_ stuff
       ["DoubleBarrel"] = {
-          ["Fov"]         = 25, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,  -- (  this is default )
+          ["Fov"]         = 7, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,  -- (  this is default )
           ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,  -- (  this is AirShot )
           ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,  -- (  this is Range   )
           ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,  -- (  this is Range   )
           ["Far_Fov"]     = 4,  ["Far_Prediction"]     = 0.135, ["Far_HitChance"]     = 300, ["Far_Smoothness"]     = 0.014,  -- (  this is Range   )
       },
       ["Revolver"] = {
-          ["Fov"]         = 25, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,
+          ["Fov"]         = 6.5, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,
           ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,
           ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,
           ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,
