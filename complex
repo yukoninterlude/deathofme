@@ -1,14 +1,14 @@
 getgenv().Shhhh = {
-  Options = {
+  ["Options"] = {
       Key = "dJPhrQDOTjbiyWcTbNFEGaUbeUspolcm", -- // replace with ur key ofc
       Version = "Latest", -- // "Latest" for latest version
       Intro = false, -- // starts a small intro
   },
-  Panic = {
+  ["Panic"] = {
       Enabled = false,
       Key = "K", -- // turns everything OFF/ON
   },
-  Universal = {
+  ["Universal"] = {
     Enabled = false, -- // turn this off if you're gonna play DA HOOD
     TeamCheck = true, -- // turn this off if the game is free for all
     VisibleCheck = true,
@@ -20,7 +20,7 @@ getgenv().Shhhh = {
     HitChance = 100,
     HitPart = "Random", -- // Head, HumanoidRootPart, Random
   },
-  Silent = {
+  ["Silent"] = {
       Enabled = true,
       Mode = "FOV", -- // FOV or Target
       Enable_KeyBind = true,
@@ -34,10 +34,10 @@ getgenv().Shhhh = {
       NearestCursorHitpart = true,
       HitPart_Mode = "Nearest Point", -- "Nearest Part", "Nearest Point"
   },
-  AimAssist = {
+  ["AimAssist"] = {
       Enabled = true,
       Hold_KeyBind = false,
-      Mode = "KeyBind", -- // "KeyBind" or "Mouse"
+      Mode = "Auto", -- // "KeyBind" or "Mouse" or "Auto", ("Auto" will auto lock on target once they are in aimassist fov)
       KeyBind = 'Q',
       MouseBind = Enum.UserInputType.MouseButton2,
       ThirdPerson = true,
@@ -59,8 +59,8 @@ getgenv().Shhhh = {
           Second = "Sine",
       },
   },
-  Shake = {
-      Enabled = true,
+  ["Shake"] = {
+      Enabled = false,
       X = 5,
       Y = 5,
       Z = 5,
@@ -69,18 +69,18 @@ getgenv().Shhhh = {
       Airshot___Y = 5,
       Airshot___Z = 5,
   },
-  Fov = {
-      Silent = {
-          Visible = false, -- circle visible
+  ["Fov"] = {
+      ["Silent"] = {
+          Visible = true, -- circle visible
           Filled = true,
-          Size = 5,
+          Size = 35,
           Transparency = 0.14,
           Thickness = 1,
           Shape = 'Circle',
           Set = {0, 0},
           Color = Color3.fromRGB(0, 0, 0),
       },
-      AimAssist = {
+      ["AimAssist"] = {
           Visible = false, -- circle visible
           Use_Fov = false,
           Disable_Outside_Fov = false,
@@ -93,7 +93,16 @@ getgenv().Shhhh = {
           Color = Color3.fromRGB(0, 0, 0),
       },
   },
-  Checks = {
+  ["Dynamic_Fov"] = {
+      Enabled = false,
+      Close_Detection = 20,
+      Mid_Detection = 40,
+      Far_Detection = 70,
+      Close_Fov = 100,
+      Mid_Fov = 60,
+      Far_Fov = 10
+  },
+  ["Checks"] = {
       Wall = true,
       Knocked = true,
       Grabbed = true,
@@ -101,32 +110,64 @@ getgenv().Shhhh = {
       Crew_Check = true,
       NoGroundShots = true,
   },
-  Resolver = {
+  ["Resolver"] = {
       Enabled = true,
       Anti_Aim_Viewer = true,
   },
-  TriggerBot = {
+  ["Misc"] = {
+      ["Auto360"] = {
+          Enabled = false,
+          SpinKeybind = "Q",
+          SpinSpeed = 1,
+    },
+      ["CloseGame"] = {
+          Enabled = false,
+          CloseGameKeybind = "M",
+          UseDelay = true,
+          Delay = 1,
+    },
+      ["FakeSpike"] = {
+          Enabled = false,
+          FakeSpikeKeybind = "K",
+          SpikeDuration = 1,
+    },
+      ["AutoReset"] = {
+          Enabled = false,
+          AutoResetKeybind = "L",
+          UseDelay = true,
+          Delay = 1,
+    },
+      ["Settings"] = {
+          AutoLowGFX = false,
+          MuteBoomBox = false,
+          AutoReload = false,
+      },
+  },
+  ["TriggerBot"] = {
       Enabled = false,
+      Notification = true,
+      Use_KeyBind = false,
+      KeyBind = "t",
       Delay = 0.1,
   },
-  Rejoin = {
+  ["Rejoin"] = {
       Enabled = false,
       Keybind = "Q",
   },
-  Noclip_Macro = {
+  ["Noclip_Macro"] = {
       Enabled = false,
       KeyBind = Enum.KeyCode.H,
       First_Gun = "[Shotgun]",
       Second_Gun = "[TacticalShotgun]",
   },
-  Animation = { -- once u click the keybinds it makes u use the Animation
-      Lay = false, LayKey = Enum.KeyCode.T,
-      Greet = false, GreetKey = Enum.KeyCode.G,
+  ["Animation"] = { -- once u click the keybinds it makes u use the Animation
+      Lay = true, LayKey = Enum.KeyCode.T,
+      Greet = true, GreetKey = Enum.KeyCode.G,
       Speed = false, SpeedKey = Enum.KeyCode.N,
       Sturdy = false, SturdyKey = Enum.KeyCode.H,
       Griddy = false, GriddyKey = Enum.KeyCode.G,
   },
-  GunSorting = {
+  ["GunSorting"] = {
     Enabled = true,
     SortFood = true,
     Keybind = "Z",
@@ -136,14 +177,14 @@ getgenv().Shhhh = {
     FourthSlot = "[Shotgun]",
     FifthSlot = "[Katana]",
   },
-  Mod = {
+  ["Mod"] = {
       Enabled = false,
       Mode = "Key",
       Key = "L", -- // crashes u when u click the button
       Message = "lol...",
       Kick_if_Mod_Joined = true,
   },
-  Macro = {
+  ["Macro"] = {
       Enabled = true,
       Hold_Key = false,
       KeyBind = Enum.KeyCode.X,
@@ -151,94 +192,89 @@ getgenv().Shhhh = {
       BypassMacroAbuse = false,
       Mode = 'First Person', -- // use "Normal" or "First Person"
   },
-  Memory = {
+  ["Memory"] = {
       Enable = true,
       Start = 971,
       End = 984,
       Speed = 1,
   },
-  Recv = {
-    Enabled = true,
-    Start = 0.10,
-    End = 0.25,
-    Speed = 1,
+  ["GunFov"] = { -- Turn Default and AirShot off for Range
+      Enabled = false,
+      Fov = true,        -- to use Fov Size stuff turn off if you don't touch Fov Size
+      Prediction = true, -- to use Prediction stuff turn off if you don't touch Prediction
+      HitChance = true,  -- to use Hitchance stuff turn off if you don't touch Hitchance
+      Smoothness = true, -- ( for Aim Assist ) to use smoothness stuff turn off if you don't want smoothness 
+      Default = true,    -- if you want to use the stuff in first line in each gun
+      AirShot = false,   -- if you want to use the airshot stuff
+      Range = false,     -- if you want to use range ofc
+      Close = 15,        -- if target is this far from you like 15 steps it will use Close_ stuff
+      Mid = 30,          -- if target is this far from you like 15 steps it will use Mid_ stuff
+      Far = math.huge,   -- if target is this far from you like 15 steps it will use Far_ stuff
+      ["DoubleBarrel"] = {
+          ["Fov"]         = 8, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,  -- (  this is default )
+          ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,  -- (  this is AirShot )
+          ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,  -- (  this is Range   )
+          ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,  -- (  this is Range   )
+          ["Far_Fov"]     = 4,  ["Far_Prediction"]     = 0.135, ["Far_HitChance"]     = 300, ["Far_Smoothness"]     = 0.014,  -- (  this is Range   )
+      },
+      ["Revolver"] = {
+          ["Fov"]         = 6, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,
+          ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,
+          ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,
+          ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,
+          ["Far_Fov"]     = 4,  ["Far_Prediction"]     = 0.135, ["Far_HitChance"]     = 300, ["Far_Smoothness"]     = 0.014,
+      },
+      ["Rifle"] = {
+          ["Fov"]         = 25, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,
+          ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,
+          ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,
+          ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,
+          ["Far_Fov"]     = 4,  ["Far_Prediction"]     = 0.135, ["Far_HitChance"]     = 300, ["Far_Smoothness"]     = 0.014,
+      },
+      ["Shotgun"] = {
+          ["Fov"]         = 25, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,
+          ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,
+          ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,
+          ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,
+          ["Far_Fov"]     = 4,  ["Far_Prediction"]     = 0.135, ["Far_HitChance"]     = 300, ["Far_Smoothness"]     = 0.014,
+      },
+      ["Smg"] = {
+          ["Fov"]         = 25, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,
+          ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,
+          ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,
+          ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,
+          ["Far_Fov"]     = 4,  ["Far_Prediction"]     = 0.135, ["Far_HitChance"]     = 300, ["Far_Smoothness"]     = 0.014,
+      },
+      ["TacticalShotgun"] = {
+          ["Fov"]         = 25, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,
+          ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,
+          ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,
+          ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,
+          ["Far_Fov"]     = 4,  ["Far_Prediction"]     = 0.135, ["Far_HitChance"]     = 300, ["Far_Smoothness"]     = 0.014,
+      },
+      ["Silencer"] = {
+          ["Fov"]         = 25, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,
+          ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,
+          ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,
+          ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,
+          ["Far_Fov"]     = 4,  ["Far_Prediction"]     = 0.135, ["Far_HitChance"]     = 300, ["Far_Smoothness"]     = 0.014,
+      },
+      ["AK47"] = {
+          ["Fov"]         = 25, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,
+          ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,
+          ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,
+          ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,
+          ["Far_Fov"]     = 4,  ["Far_Prediction"]     = 0.135, ["Far_HitChance"]     = 300, ["Far_Smoothness"]     = 0.014,
+      },
+      ["AR"] = {
+          ["Fov"]         = 25, ["Prediction"]         = 0.135, ["HitChance"]         = 300, ["Smoothness"]         = 0.014,
+          ["AirShot_Fov"] = 15, ["AirShot_Prediction"] = 0.135, ["AirShot_HitChance"] = 300, ["AirShot_Smoothness"] = 0.014,
+          ["Close_Fov"]   = 15, ["Close_Prediction"]   = 0.135, ["Close_HitChance"]   = 300, ["Close_Smoothness"]   = 0.014,
+          ["Mid_Fov"]     = 7,  ["Mid_Prediction"]     = 0.135, ["Mid_HitChance"]     = 300, ["Mid_Smoothness"]     = 0.014,
+          ["Far_Fov"]     = 4,  ["Far_Prediction"]     = 0.135, ["Far_HitChance"]     = 300, ["Far_Smoothness"]     = 0.014,
+      },
   },
-  GunFov = { -- Turn Default and AirShot off for Range
-      Enabled = true,
-      Fov = true,
-      Prediction = true,
-      HitChance = true,
-      Default = true,
-      AirShot = false,
-      Range = false,
-      Close = 15,
-      Mid = 30,
-      Far = math.huge,
-      DoubleBarrel = {
-          Fov = 8, Prediction = 0.135, HitChance = 300,
-          AirShot_Fov = 15, AirShot_Prediction = 0.135, AirShot_HitChance = 300,
-          Close_Fov = 15, Close_Prediction = 0.135, Close_HitChance = 300,
-          Mid_Fov = 7, Mid_Prediction = 0.135, Mid_HitChance = 300,
-          Far_Fov = 4, Far_Prediction = 0.135, Far_HitChance = 300,
-      },
-      Revolver = {
-          Fov = 4.5, Prediction = 0.135, HitChance = 300,
-          AirShot_Fov = 15, AirShot_Prediction = 0.135, AirShot_HitChance = 300,
-          Close_Fov = 42, Close_Prediction = 0.135, Close_HitChance = 300,
-          Mid_Fov = 55, Mid_Prediction = 0.135, Mid_HitChance = 300,
-          Far_Fov = 73, Far_Prediction = 0.135, Far_HitChance = 300,
-      },
-      Rifle = {
-          Fov = 10, Prediction = 0.135, HitChance = 300,
-          AirShot_Fov = 15, AirShot_Prediction = 0.135, AirShot_HitChance = 300,
-          Close_Fov = 15, Close_Prediction = 0.135, Close_HitChance = 300,
-          Mid_Fov = 8, Mid_Prediction = 0.135, Mid_HitChance = 300,
-          Far_Fov = 4, Far_Prediction = 0.135, Far_HitChance = 300,
-      },
-      Shotgun = {
-          Fov = 10, Prediction = 0.135, HitChance = 300,
-          AirShot_Fov = 15, AirShot_Prediction = 0.135, AirShot_HitChance = 300,
-          Close_Fov = 15, Close_Prediction = 0.135, Close_HitChance = 300,
-          Mid_Fov = 8, Mid_Prediction = 0.135, Mid_HitChance = 300,
-          Far_Fov = 4, Far_Prediction = 0.135, Far_HitChance = 300,
-      },
-      Smg = {
-          Fov = 10, Prediction = 0.135, HitChance = 300,
-          AirShot_Fov = 15, AirShot_Prediction = 0.135, AirShot_HitChance = 300,
-          Close_Fov = 15, Close_Prediction = 0.135, Close_HitChance = 300,
-          Mid_Fov = 8, Mid_Prediction = 0.135, Mid_HitChance = 300,
-          Far_Fov = 4, Far_Prediction = 0.135, Far_HitChance = 300,
-      },
-      TacticalShotgun = {
-          Fov = 10, Prediction = 0.135, HitChance = 300,
-          AirShot_Fov = 15, AirShot_Prediction = 0.135, AirShot_HitChance = 300,
-          Close_Fov = 15, Close_Prediction = 0.135, Close_HitChance = 300,
-          Mid_Fov = 8, Mid_Prediction = 0.135, Mid_HitChance = 300,
-          Far_Fov = 4, Far_Prediction = 0.135, Far_HitChance = 300,
-      },
-      Silencer = {
-          Fov = 10, Prediction = 0.135, HitChance = 300,
-          AirShot_Fov = 15, AirShot_Prediction = 0.135, AirShot_HitChance = 300,
-          Close_Fov = 15, Close_Prediction = 0.135, Close_HitChance = 300,
-          Mid_Fov = 8, Mid_Prediction = 0.135, Mid_HitChance = 300,
-          Far_Fov = 4, Far_Prediction = 0.135, Far_HitChance = 300,
-    },
-      AK47 = {
-          Fov = 10, Prediction = 0.135, HitChance = 300,
-          AirShot_Fov = 15, AirShot_Prediction = 0.135, AirShot_HitChance = 300,
-          Close_Fov = 15, Close_Prediction = 0.135, Close_HitChance = 300,
-          Mid_Fov = 8, Mid_Prediction = 0.135, Mid_HitChance = 300,
-          Far_Fov = 4, Far_Prediction = 0.135, Far_HitChance = 300,
-    },
-      AR = {
-          Fov = 10, Prediction = 0.135, HitChance = 300,
-          AirShot_Fov = 15, AirShot_Prediction = 0.135, AirShot_HitChance = 300,
-          Close_Fov = 15, Close_Prediction = 0.135, Close_HitChance = 300,
-          Mid_Fov = 8, Mid_Prediction = 0.135, Mid_HitChance = 300,
-          Far_Fov = 4, Far_Prediction = 0.135, Far_HitChance = 300,
-    },
-  },
-  AutoPrediction = { -- the numbers are pings ( this is for silent + Current sets not recommended )
+  ["AutoPrediction"] = { -- the numbers are pings ( this is for silent + Current sets not recommended )
       Enabled = false,
       p20_30 = 0.1000,
       p30_40 = 0.1100,
@@ -259,7 +295,7 @@ getgenv().Shhhh = {
       p180_190 = 0.1848,
       p190_200 = 0.1865,
   },
-  Chat = {
+  ["Chat"] = {
       Enabled = false, -- // example : $pred 0.12
       HitChance = "$hc",
       Silent_Prediction = "$pred",
@@ -275,6 +311,5 @@ getgenv().Shhhh = {
       Show_Fov_AimAssist = "$SFA", -- use true or false only like $SFA true or false
   },
 }
-
-
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/xfarzad/Shhhh/main/BETA", true))()
+  
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xfarzad/Shhhh/main/BETA", true))()
