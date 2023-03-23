@@ -71,7 +71,7 @@ getgenv().Shhhh = {
   },
   ["Fov"] = {
       ["Silent"] = {
-          Visible = true, -- circle visible
+          Visible = false, -- circle visible
           Filled = true,
           Size = 35,
           Transparency = 0.14,
